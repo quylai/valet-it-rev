@@ -36,7 +36,7 @@ class LoginForm extends Component {
     }
 
     render() {
-        return (
+        return(
             <div className="row">
                 <div className="col-8 offset-2">
                     <form>
@@ -49,6 +49,9 @@ class LoginForm extends Component {
                             <input type="password" className="form-control" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
                         </div>
                         <button type="submit" className="btn btn-primary" onClick={this.loginSubmit}> Submit </button>
+
+                        <spacer type="horizontal" size="10"> </spacer>
+                        <button className="btn btn-info">amIaButton?</button>
                     </form>
                 </div>
             </div>
@@ -58,5 +61,4 @@ class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {};
-
 export default LoginForm;

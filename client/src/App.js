@@ -8,7 +8,7 @@ class App extends Component {
     return (
         <div className="container">
           <LoginForm loginSubmit={() => { this.loginUser() }}/>
-         </div>
+        </div>
     );
   }
 }
