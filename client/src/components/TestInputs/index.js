@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Form, Input, Button } from "reactstrap";
+import axios from 'axios';
 
 class TestInputs extends Component {
 
@@ -17,10 +17,30 @@ class TestInputs extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   
+  // prevent overReact on input changes
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({[name]: value});
   }
+
+  loginSubmit = event => {
+		event.preventDefault();
+
+		this.setState({
+      "userName": event.currentTarget.userName,
+      "password": event.currentTarget.password,
+      "email": event.currentTarget.email,
+      "firstName": event.currentTarget.firstName,
+      "lastName": event.currentTarget.lastName
+		});
+
+		axios.post('/api/testUserSignup', {
+			'username': this.state.username,
+			'password': this.state.password
+		}).then((response) => {
+			console.log(response.data);  //db
+		});
+	}
 
   render() {
     return(
@@ -40,7 +60,7 @@ class TestInputs extends Component {
         <Input type="text" name="lastName" value={this.state.lastName}
           onChange={this.handleChange} placeholder="lastName"
         />
-        <Button>Sign me up!</Button>
+        <Button type="submit" onClick={this.loginSubmit}>Sign me up!</Button>
       </Form>
     );
   }

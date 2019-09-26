@@ -15,7 +15,7 @@ class LoginForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showLogin: true  //  true to show login, false - signup 
+			showLogin: false  //  true to show login, false - signup 
     }
 	}
 
