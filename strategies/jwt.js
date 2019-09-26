@@ -1,3 +1,4 @@
+require('dotenv').config();
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 

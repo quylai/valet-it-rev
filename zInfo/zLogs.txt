@@ -1,0 +1,72 @@
+TASKS INDICES
+
+01 
+setup to see demo of authentication 
+
+02 
+tie it to sequelize
+
+03
+deploying to heroku
+
+04
+start tying the components, maybe breakdown to more tasks
+
+//=================================================================================
+//=================================================================================
+TASKS LOGS
+
+----------------------------------------
+==TASK-01==
+setup to see demo of authentication 
+
+need to do the following on boilerplate in order for it to work:
+
+- in strategies/jwt.js
+	change
+			'your_jwt_secret'
+	to
+			process.env.JWTSECRET
+
+- need to generate ".env" file with content:
+			JWTSECRET=some-values
+	"some-values" is arbitrary; besure to include ".env" in ".gitignore"
+
+- in package.json, change
+			"start:prod": "node server.js",
+	to
+			"start:prod": "node -r esm server.js",
+	which allow the use of "esm", those weird arrow function
+
+- don't delete "yarn.lock", this maybe the log to lock-in all version of
+	npm used that work with the repo app; maybe this is equivalent to 
+	package.lock.json
+
+- errors in VSC terminal:
+			Error: listen EADDRINUSE: address already in use :::3001
+			Emitted 'error' event at:
+			at process._tickCallback (internal/process/next_tick.js:63:19)
+	these error may pertain to database connection config, which will be deat
+	with in next task
+
+----------------------------------------
+==TASK-02==
+tie it to sequelize
+
+
+
+----------------------------------------
+==TASK-03==
+deploying to heroku
+
+
+
+----------------------------------------
+==TASK-04==
+start tying the components, maybe breakdown to more tasks
+
+
+
+//=================================================================================
+//=================================================================================
+LOGIC ROUTES
