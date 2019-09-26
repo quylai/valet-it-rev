@@ -72,10 +72,11 @@ observe if inputs store in database
 		it in database (authdemo); it seems like while storing those
 		inputs gets the passwords salt'd in the process, per "User" model,
 		models/user.js
-	PROCESS:
-	- created component "TestInputs" with necessary inputs
+	ACTION:
+	- toggler to show login or signup page, in LoginForm component
+	 	@ construct, variable showLogin
 	- next:
-		make a button toggler to show/hide between login/signup
+		make a http-post on TestInputs component to see if data register in database
 
 
 

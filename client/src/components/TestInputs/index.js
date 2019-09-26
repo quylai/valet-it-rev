@@ -26,19 +26,19 @@ class TestInputs extends Component {
     return(
       <Form>
         <Input type="text" name="userName" value={this.state.userName}
-          onChange={this.handleChange}
+          onChange={this.handleChange} placeholder="userName"
         />
         <Input type="text" name="password" value={this.state.password}
-          onChange={this.handleChange}
+          onChange={this.handleChange} placeholder="password"
         />
         <Input type="text" name="email" value={this.state.email}
-          onChange={this.handleChange}
+          onChange={this.handleChange} placeholder="email"
         />
         <Input type="text" name="firstName" value={this.state.firstName}
-          onChange={this.handleChange}
+          onChange={this.handleChange} placeholder="firstName"
         />
         <Input type="text" name="lastName" value={this.state.lastName}
-          onChange={this.handleChange}
+          onChange={this.handleChange} placeholder="lastName"
         />
         <Button>Sign me up!</Button>
       </Form>
