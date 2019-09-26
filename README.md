@@ -13,5 +13,5 @@
 
 - Boilderplate (17d23e2)  
   (https://github.com/humblewebdev/PassportReactDemo)  
-  has front-end in React environment; back-end using npm concurrently for simultaneous run of server/client during development; equipped with Passport authentication
+  has front-end in React environment; back-end using npm concurrently for simultaneous run of server/client during development; equipped with Passport authentication 
 
