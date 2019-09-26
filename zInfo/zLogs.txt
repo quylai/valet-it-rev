@@ -51,7 +51,7 @@ need to do the following on boilerplate in order for it to work:
 
 ----------------------------------------
 ==TASK-02==
-tie it to sequelize
+observe if inputs store in database
 
 
 
