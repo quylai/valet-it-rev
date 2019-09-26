@@ -35,8 +35,11 @@ class TestInputs extends Component {
 		});
 
 		axios.post('/api/testUserSignup', {
-			'username': this.state.username,
-			'password': this.state.password
+			'userName': this.state.userName,
+      'password': this.state.password,
+      'email': this.state.email,
+      'firstName': this.state.firstName,
+      'lastName': this.state.lastName,
 		}).then((response) => {
 			console.log(response.data);  //db
 		});
