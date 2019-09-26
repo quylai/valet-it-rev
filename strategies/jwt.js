@@ -4,7 +4,7 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 export default new JWTStrategy(
     {
         jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-        'secretOrKey': 'your_jwt_secret'
+        'secretOrKey': process.env.JWTSECRET
     }, (jwtPayload, done) => {
         try {
             return done(null, jwtPayload)
