@@ -27,8 +27,11 @@ passport.use(LocalStrategy);
 passport.use(JWTStrategy);
 
 // import exampleRoutes from './routes/example';
-
 // app.use('/api/examples', exampleRoutes(app));
+
+// route to store new user inputs data
+import newUserRoutes from './routes/newUser';
+newUserRoutes(app);
 
 import authRoutes from './routes/auth';
 authRoutes(app);
