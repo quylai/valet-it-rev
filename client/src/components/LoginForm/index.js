@@ -1,63 +1,69 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 
+
 class LoginForm extends Component {
-    state = {
-        username: '',
-        password: ''
-    }
+	state = {
+		username: '',
+		password: ''
+	}
 
-    cookies = new Cookies();
+	cookies = new Cookies();
 
-    constructor(props) {
-        super(props);
-    }
+	constructor(props) {
+		super(props);
+	}
 
-    loginSubmit = (event) => {
-        event.preventDefault();
-        this.setState({
-            "username": event.currentTarget.username,
-            "password": event.currentTarget.password
-        });
-        axios.post('/api/auth', {
-            'username': this.state.username,
-            'password': this.state.password
-        }).then((response) => {
-            this.cookies.set('token', response.data.token);
-        });
-    }
+	loginSubmit = (event) => {
+		event.preventDefault();
 
-    handleChange = (event) => {
-        const { name, value } = event.target;
+		this.setState({
+			"username": event.currentTarget.username,
+			"password": event.currentTarget.password
+		});
 
-        this.setState({[name]: value});
-    }
+		axios.post('/api/auth', {
+			'username': this.state.username,
+			'password': this.state.password
+		}).then((response) => {
+			this.cookies.set('token', response.data.token);
+		});
+	}
 
-    render() {
-        return(
-            <div className="row">
-                <div className="col-8 offset-2">
-                    <form>
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" className="form-control" name="username" id="username" onChange={this.handleChange} value={this.state.username}/>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input type="password" className="form-control" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
-                        </div>
-                        <button type="submit" className="btn btn-primary" onClick={this.loginSubmit}> Submit </button>
+	handleChange = (event) => {
+		const { name, value } = event.target;
 
-                        <spacer type="horizontal" size="10"> </spacer>
-                        <button className="btn btn-info">amIaButton?</button>
-                    </form>
-                </div>
-            </div>
-    )
-        ;
-    }
+		this.setState({[name]: value});
+	}
+
+	render() {
+		return(
+			<div className="row">
+				<div className="col-8 offset-2">
+					<form>
+						<div className="form-group">
+								<label htmlFor="username">Username</label>
+								<input type="text" className="form-control" name="username" id="username" onChange={this.handleChange} value={this.state.username}/>
+						</div>
+						<div className="form-group">
+								<label htmlFor="password">Password</label>
+								<input type="password" className="form-control" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+						</div>
+						<button 
+							type="submit" className="btn btn-primary" onClick={this.loginSubmit}>
+								Submit 
+						</button>
+						<spacer type="horizontal" size="10"> </spacer>
+
+						{/* <button className="btn btn-info">to TestInputs</button> */}
+
+					</form>
+				</div>
+			</div>
+		);
+	}
 }
 
 LoginForm.propTypes = {};

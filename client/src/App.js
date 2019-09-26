@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
         <div className="container">
-          <LoginForm loginSubmit={() => { this.loginUser() }}/>
+            <LoginForm loginSubmit={() => { this.loginUser() }}/>
         </div>
     );
   }
