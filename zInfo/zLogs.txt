@@ -53,6 +53,26 @@ need to do the following on boilerplate in order for it to work:
 ==TASK-02==
 observe if inputs store in database
 
+- errors in VSC terminal:
+			Error: listen EADDRINUSE: address already in use :::3001
+			Emitted 'error' event at:
+			at process._tickCallback (internal/process/next_tick.js:63:19)
+	resolved:
+	in server.js, changes
+			const PORT = process.env.PORT || 3001;
+	to "5000"; also do 5000 for 
+			"proxy": "http://localhost:3001/",
+	in file client/package.json
+
+* CURRENTLY:
+	- table (username, password, email, first_name, last_name) generated 
+		when app ran
+	TRY:
+	- make a react components with inputs of those alias, then try to store
+		it in database (authdemo); it seems like while storing those
+		inputs gets the passwords salt'd in the process, per "User" model,
+		models/user.js
+
 
 
 ----------------------------------------

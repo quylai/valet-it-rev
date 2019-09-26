@@ -9,7 +9,7 @@ import passport from 'passport';
 import LocalStrategy from './strategies/local';
 import JWTStrategy from './strategies/jwt';
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 // Middlewares
