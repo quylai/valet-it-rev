@@ -64,21 +64,7 @@ observe if inputs store in database
 			"proxy": "http://localhost:3001/",
 	in file client/package.json
 
-* CURRENTLY:
-	- table (username, password, email, first_name, last_name) generated 
-		when app ran
-	TRY:
-	- make a react components with inputs of those alias, then try to store
-		it in database (authdemo); it seems like while storing those
-		inputs gets the passwords salt'd in the process, per "User" model,
-		models/user.js
-	ACTION:
-	- toggler to show login or signup page, in LoginForm component
-	 	@ construct, variable showLogin
-	- next:
-		make a http-post on TestInputs component to see if data register in database
-
-
+- done, yay...
 
 ----------------------------------------
 ==TASK-03==

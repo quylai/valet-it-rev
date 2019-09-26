@@ -41,7 +41,10 @@ class TestInputs extends Component {
       'firstName': this.state.firstName,
       'lastName': this.state.lastName,
 		}).then((response) => {
-			console.log(response.data);  //db
+      // console.log(response.data);  // debug
+		}).catch((error) => {
+      console.log("----error in TestInputs comp. POST");
+      console.log(error);
 		});
 	}
 
