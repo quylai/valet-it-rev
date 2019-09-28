@@ -15,3 +15,4 @@
   (https://github.com/humblewebdev/PassportReactDemo)  
   has front-end in React environment; back-end using npm concurrently for simultaneous run of server/client during development, and tasking npm express for routing of http-calls; equipped with Passport authentication 
 
+ 
