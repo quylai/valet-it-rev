@@ -70,6 +70,14 @@ observe if inputs store in database
 ==TASK-03==
 deploying to heroku
 
+* up-to-f215636
+	- mod config/config.json with:
+				"production": {
+					"use_env_variable": "JAWSDB_URL",
+					"dialect": "mysql"
+				}
+	- account for process.env.JWTSECRET by setup its value in 
+				heroku/Settings/Config_Vars
 
 
 
