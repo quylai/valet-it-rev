@@ -74,8 +74,8 @@ deploying to heroku
 	[MySQL-Workbench and SequelPro] on Mac-laptop
 
 ----
+* mod the following:
 
-* up-to-f215636
 	- mod config/config.json with:
 				"production": {
 					"use_env_variable": "JAWSDB_URL",
@@ -83,7 +83,10 @@ deploying to heroku
 				}
 	- account for process.env.JWTSECRET by setup its value in 
 				heroku/Settings/Config_Vars
-				
+
+	- in package.json (outer one), verify that:
+			"heroku-postbuild": "npm run build"
+
 ----------------------------------------
 ==TASK-04==
 start tying the components, maybe breakdown to more tasks
@@ -93,3 +96,41 @@ start tying the components, maybe breakdown to more tasks
 //=================================================================================
 //=================================================================================
 LOGIC ROUTES
+
+Guest path:
+
+- selected "Guest Login"
+- modal display, asking login credential, guest login'd
+
+* to dashboard:
+	- there are 3-flags: Parked, Paid, InRoute
+		> Parked - active when valet parked vehicle
+		> Paid - active after guest paid
+		> InRoute - active when valet in-process of retrieving vehicle
+	- Pay button - takes to screen for for payment information
+	- PickUp button - alert valet to retrieve vehicle, then insert wait-time
+		info near bottom of dashboard
+	
+----------------------------------------
+Valet path:
+
+- selected "Valet Driver"
+- display screen request badge#; assuming badge ids alreay in database
+- to screen for registering guest information (first and last); 
+	buttons: LogGuest and Queue
+
+- LogGuest -> inputs for vehicle information; 
+	button: Parked -> registering guest screen
+
+- Queue - screen contain guests requested for vehicle; each vehicle with info:
+	number-placed-queue, parking-spot-number, licence-plate, color/make/model; 
+	buttons: Home and InRoute
+
+- Home button -> registering guest screen
+- InRoute button -> after selecting vehicle on queue, clicking button will display
+	vehicle information on a separate screen, with button Arrived;  
+	Arrived button loop back to registering guest screen
+
+
+
+

@@ -2,7 +2,7 @@
 
 ### Objective
 
-- To tie all the component of project "valet-it" together with emphasis on _understanding React_
+- To tie all the component of project (6fc3403) "valet-it" together with emphasis on _understanding React_
 
 ---
 
