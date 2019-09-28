@@ -70,6 +70,11 @@ observe if inputs store in database
 ==TASK-03==
 deploying to heroku
 
+- something odd about UT internet network; unable to latch onto JawsDB via 
+	[MySQL-Workbench and SequelPro] on Mac-laptop
+
+----
+
 * up-to-f215636
 	- mod config/config.json with:
 				"production": {
@@ -78,9 +83,7 @@ deploying to heroku
 				}
 	- account for process.env.JWTSECRET by setup its value in 
 				heroku/Settings/Config_Vars
-
-
-
+				
 ----------------------------------------
 ==TASK-04==
 start tying the components, maybe breakdown to more tasks
